@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!--=============== JAVASCRIPT ===============-->
+    <script src="assets/js/main.js" defer></script>
+
+    <title>Interactive Portfolio</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <div class="logo">Portfolio</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#work">My Work</a>
+        <a href="#info">My Info</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact Me</a>
+      </nav>
+      <button type="button" id="theme-toggle" class="theme-toggle">🌙</button>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container">
+          <div class="home__text">
+            <h1>John Lloyd Brillante</h1>
+            <p>Front End Web Developer/UI and UX Designer/Graphic Designer</p>
+            <button type="button" onclick="alert('Welcome to my portfolio!')">
+              Show Resume
+            </button>
+          </div>
+          <div class="home__photo">
+            <img src="assets/img/profile.png" alt="Your Photo" />
+          </div>
+        </div>
+      </section>
+      <!-- Separator -->
+      <div class="separator"></div>
+      <!--==================== RECENT WORKS ====================-->
+      <section class="work section" id="work">
+        <h2 class="section__title">Recent Works</h2>
+        <p class="section__subtitle">A showcase of my projects and designs</p>
+
+        <div class="work__container">
+          <!-- Web Development Projects -->
+          <div class="work__category">
+            <h3>Web Development</h3>
+            <div class="projects">
+              <div class="project">
+                <img src="assets/img/work1.jpg" alt="Restaurant Website" />
+                <p>Restaurant Website</p>
+                <a
+                  href="https://example.com/restaurant"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project__link"
+                  >View Project</a
+                >
+              </div>
+              <div class="project">
+                <img src="assets/img/work2.jpg" alt="E-commerce Platform" />
+                <a
+                  href="https://example.com/ecommerce"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project__link"
+                  >View Project</a
+                >
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Graphic Design Projects -->
+          <div class="work__category">
+            <h3>Graphic Design</h3>
+            <div class="projects">
+              <div class="project">
+                <img src="assets/img/design1.jpg" alt="Brand Logo Design" />
+                <p>Brand Logo Design</p>
+                <a
+                  href="assets/img/design1.jpg"
+                  target="_blank"
+                  class="project__link"
+                  >View Design</a
+                >
+              </div>
+              <div class="project">
+                <img src="assets/img/design2.jpg" alt="Social Media Poster" />
+                <p>Social Media Poster</p>
+                <a
+                  href="assets/img/design2.jpg"
+                  target="_blank"
+                  class="project__link"
+                  >View Design</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- UI/UX Design Projects -->
+          <div class="work__category">
+            <h3>UI/UX Design</h3>
+            <div class="projects">
+              <div class="project">
+                <img src="assets/img/uiux1.jpg" alt="Mobile App Design" />
+                <p>Mobile App Design</p>
+                <a
+                  href="assets/img/uiux1.jpg"
+                  target="_blank"
+                  class="project__link"
+                  >View Design</a
+                >
+              </div>
+              <div class="project">
+                <img src="assets/img/uiux2.jpg" alt="Dashboard UI" />
+                <p>Dashboard UI</p>
+                <a
+                  href="assets/img/uiux2.jpg"
+                  target="_blank"
+                  class="project__link"
+                  >View Design</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Separator -->
+    <div class="separator"></div>
+    <!--==================== INFO ====================-->
+    <section class="info section" id="info">
+      <h2 class="section__title">About Me</h2>
+      <p class="section__subtitle">Get to know me better</p>
+
+      <div class="info__container">
+        <div class="info__text">
+          <p>
+            I am a passionate <strong>Front End Web Developer</strong>,
+            <strong>UI/UX Designer</strong>, and
+            <strong>Graphic Designer</strong> with a keen eye for detail and a
+            love for creating visually stunning and user-friendly designs. With
+            experience in modern web technologies like <strong>HTML</strong>,
+            <strong>CSS</strong>, <strong>JavaScript</strong>, and frameworks
+            like <strong>React</strong>, I bring ideas to life on the web.
+          </p>
+          <p>
+            My expertise in tools like <strong>Figma</strong>,
+            <strong>Adobe XD</strong>, and <strong>Sketch</strong> allows me to
+            design seamless user experiences, while my graphic design skills
+            help me craft captivating visuals and branding materials.
+          </p>
+        </div>
+
+        <div class="info__skills">
+          <h3>Skills</h3>
+          <ul>
+            <li>Responsive Web Design</li>
+            <li>JavaScript (ES6+), React, Vue.js</li>
+            <li>UI/UX Design with Figma and Adobe XD</li>
+            <li>Graphic Design and Branding</li>
+            <li>Version Control (Git, GitHub)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Separator -->
+    <div class="separator"></div>
+    <!--==================== SERVICES ====================-->
+    <section class="services section" id="services">
+      <h2 class="section__title">My Services</h2>
+      <p class="section__subtitle" style="text-align: center">
+        What I can offer you
+      </p>
+
+      <div class="services__container">
+        <!-- Service 1: Front End Development -->
+        <div class="service">
+          <i class="ri-code-line service__icon"></i>
+          <h3 class="service__title">Front End Development</h3>
+          <p class="service__description">
+            Building responsive, fast, and visually appealing websites using
+            modern technologies like HTML, CSS, JavaScript, and frameworks like
+            React or Vue.js.
+          </p>
+        </div>
+
+        <!-- Service 2: UI/UX Design -->
+        <div class="service">
+          <i class="ri-layout-masonry-line service__icon"></i>
+          <h3 class="service__title">UI/UX Design</h3>
+          <p class="service__description">
+            Designing user-friendly interfaces and crafting seamless user
+            experiences with tools like Figma, Adobe XD, and Sketch.
+          </p>
+        </div>
+
+        <!-- Service 3: Graphic Design -->
+        <div class="service">
+          <i class="ri-brush-line service__icon"></i>
+          <h3 class="service__title">Graphic Design</h3>
+          <p class="service__description">
+            Creating stunning visuals, logos, and branding materials that
+            effectively communicate your message and captivate your audience.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Separator -->
+    <div class="separator"></div>
+    <!--==================== CONTACT ====================-->
+    <section class="contact section" id="contact">
+      <h2 class="section__title">Contact Me</h2>
+      <p class="section__subtitle">
+        Feel free to reach out for collaborations or just a friendly chat!
+      </p>
+
+      <div class="contact__container">
+        <!-- Contact Form -->
+        <!-- Contact Form -->
+        <form class="contact__form" id="contact-form">
+          <div class="form__group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form__input"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form__input"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <textarea
+              id="message"
+              name="message"
+              class="form__input"
+              placeholder="Your Message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="button" class="button" id="send-button">
+            Send Message
+          </button>
+        </form>
+
+        <!-- Social Media Links -->
+        <div class="contact__socials">
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social__link"
+          >
+            <i class="ri-twitter-line"></i> Twitter
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social__link"
+          >
+            <i class="ri-linkedin-line"></i> LinkedIn
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social__link"
+          >
+            <i class="ri-github-line"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+      <p>
+        &copy; 2025 John Lloyd Brillante. All rights reserved. |
+        <a href="#home">Back to Top</a>
+      </p>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <div id="scrollUp">↑</div>
+  </body>
+</html>
