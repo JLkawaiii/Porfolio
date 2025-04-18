@@ -1,0 +1,23 @@
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("Form submitted");
+
+  emailjs
+    .sendForm(
+      "service_kpr8r1y",
+      "template_xer42oq",
+      "contact-form",
+      "lwfQVU-EMRWuH4bRr"
+    )
+    .then(
+      (response) => {
+        console.log("Email sent successfully:", response);
+        alert("Message sent successfully!");
+        contactForm.reset();
+      },
+      (error) => {
+        console.error("Failed to send email:", error);
+        alert("Failed to send message. Please try again.");
+      }
+    );
+});

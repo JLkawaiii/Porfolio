@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
 
 :root {
+  /* Colors */
   --hue: 230;
   --first-color: hsl(var(--hue), 55%, 55%);
   --first-color-light: hsl(var(--hue), 55%, 65%);
@@ -10,65 +11,7 @@
   --body-color: hsl(var(--hue), 40%, 16%);
   --container-color: hsl(var(--hue), 40%, 20%);
 
-  /* Home Section */
-
-  /* Light mode styles for the name */
-  body.light-mode .home__text h1 {
-    color: #4a90e2; /* Bright blue color for the name */
-  }
-  .home__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem; /* Add spacing between text and photo */
-  }
-
-  .home__text {
-    flex: 1; /* Take up available space */
-  }
-
-  .home__text h1 {
-    font-size: var(--biggest-font-size);
-    margin-bottom: 1rem;
-    color: var(--first-color);
-  }
-
-  .home__text p {
-    font-size: var(--h2-font-size);
-    margin-bottom: 2rem;
-    color: var(--text-color);
-  }
-
-  .home__text button {
-    padding: 0.75rem 1.5rem;
-    font-size: var(--normal-font-size);
-    color: var(--title-color);
-    background-color: var(--first-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .home__text button:hover {
-    background-color: var(--first-color-alt);
-  }
-
-  .home__photo {
-    flex: 1; /* Take up available space */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .home__photo img {
-    max-width: 100%; /* Increase the size of the image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 0; /* Remove the circular shape */
-    box-shadow: none; /* Remove any shadow effect */
-    transition: transform 0.3s ease; /* Optional: Keep smooth scaling on hover */
-  }
-  /*========== Font and typography ==========*/
+  /* Typography */
   --body-font: "Syne", sans-serif;
   --biggest-font-size: 3rem;
   --big-font-size: 1.5rem;
@@ -78,383 +21,17 @@
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
 
-  /*========== Font weight ==========*/
+  /* Font weight */
   --font-regular: 400;
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  /*========== z index ==========*/
+  /* z-index */
   --z-tooltip: 10;
   --z-fixed: 100;
 }
 
-/*========== Responsivenes==========*/
-@media screen and (max-width: 768px) {
-  .home__photo img {
-    max-width: 50%; /* Smaller size for tablets */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .home__photo img {
-    max-width: 70%; /* Adjust size for tablets */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .home__photo img {
-    max-width: 60%; /* Adjust size for mobile devices */
-  }
-}
-
-/*========== Animations ==========*/
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes fadeInRotate {
-  0% {
-    opacity: 0;
-    transform: rotate(10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(0);
-  }
-}
-@keyframes fadeInScaleRotate {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) rotate(10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0);
-  }
-}
-
-/* Profile picture container */
-.home__photo {
-  flex: 1; /* Take up available space */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* For positioning the gradient */
-  background: radial-gradient(
-    square,
-    #1e2a38,
-    #0b1120
-  ); /* Gradient background */
-  border-radius: 50%; /* Optional: Make the container circular */
-  padding: 2rem; /* Add padding around the image */
-}
-
-/* Profile picture */
-.home__photo img {
-  max-width: 100%; /* Ensure the image scales properly */
-  height: auto;
-  border-radius: 50%; /* Optional: Keep the image circular */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Add a shadow for depth */
-}
-/* Add radiant effect below the profile picture */
-.home__photo::after {
-  content: ""; /* Create an empty pseudo-element */
-  position: absolute;
-  bottom: -20px; /* Position the glow below the image */
-  width: 150px; /* Adjust the width of the glow */
-  height: 20px; /* Adjust the height of the glow */
-  background: radial-gradient(
-    circle,
-    rgba(173, 216, 230, 0.5),
-    transparent
-  ); /* Light blue radiant effect */
-  border-radius: 50%; /* Make it circular */
-  z-index: -1; /* Place it behind the image */
-  animation: pulse 2s infinite; /* Optional: Add a pulsing animation */
-} /* <-- Add this closing bracket */
-
-/* Optional: Add a pulsing animation */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Hover effect: Scale and shadow */
-.home__photo img:hover {
-  transform: scale(1.1); /* Slightly enlarge the image */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Add a deeper shadow */
-}
-
-/* Optional: Add a glowing border effect */
-.home__photo img:hover {
-  border: 4px solid var(--first-color); /* Add a border on hover */
-  box-shadow: 0 0 15px var(--first-color); /* Add a glowing effect */
-}
-
-/* Hover effect: Scale and shadow */
-.home__photo img:hover {
-  transform: scale(1.1); /* Slightly enlarge the image */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Add a deeper shadow */
-}
-
-/* Optional: Add a glowing border effect */
-.home__photo img:hover {
-  border: 4px solid var(--first-color); /* Add a border on hover */
-  box-shadow: 0 0 15px var(--first-color); /* Add a glowing effect */
-}
-
-/* Light mode styles */
-
-/* Light mode styles for text */
-body.light-mode .home__text p,
-body.light-mode .section__subtitle,
-body.light-mode .info__text {
-  color: #000000; /* Pure black text for better visibility */
-}
-/* Light mode styles for low-opacity text */
-body.light-mode .project p {
-  color: #4a90e2; /* Bright blue color for low-opacity text */
-  opacity: 1; /* Ensure full opacity */
-}
-
-body.light-mode .home__text h1,
-body.light-mode .section__title {
-  color: #000000; /* Pure black for titles */
-}
-body.light-mode {
-  background-color: #ffffff; /* Light background for the body */
-  color: #000000; /* Dark text color */
-}
-
-body.light-mode .header {
-  background-color: #f0f0f0; /* Light background for the header */
-  color: #000000; /* Dark text color for the header */
-}
-
-body.light-mode nav a {
-  color: #000000; /* Dark text color for navigation links */
-}
-
-body.light-mode nav a:hover {
-  color: #555555; /* Slightly darker hover color for links */
-}
-
-body.light-mode .theme-toggle {
-  background-color: #000000; /* Dark background for the toggle button */
-  color: #ffffff; /* Light text color for the toggle button */
-}
-
-body.light-mode .home {
-  background-color: #f9f9f9; /* Light background for the home section */
-  color: #000000; /* Dark text color */
-}
-
-body.light-mode .work .project {
-  background-color: #f5f5f5; /* Light background for project cards */
-  color: #000000; /* Dark text color */
-  border: 1px solid #e0e0e0; /* Add a light border for better visibility */
-}
-
-body.light-mode .work .project:hover {
-  background-color: #eaeaea; /* Slightly darker background on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-}
-
-body.light-mode footer {
-  background-color: #f0f0f0; /* Light background for the footer */
-  color: #000000; /* Dark text color */
-}
-/* Light mode styles for sections */
-
-body.light-mode .info,
-body.light-mode .services,
-body.light-mode .work,
-body.light-mode .contact {
-  background-color: #f9f9f9; /* Light background for sections */
-  color: #000000; /* Dark text color */
-}
-
-body.light-mode .section__title {
-  color: #000000; /* Dark text for section titles */
-}
-
-body.light-mode .section__subtitle {
-  color: #555555; /* Slightly darker text for subtitles */
-}
-
-body.light-mode .project {
-  background-color: #ffffff; /* Light background for project cards */
-  color: #000000; /* Dark text color */
-  border: 1px solid #e0e0e0; /* Add a light border for better visibility */
-}
-
-body.light-mode .project:hover {
-  background-color: #f0f0f0; /* Slightly darker background on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-}
-
-body.light-mode .service {
-  background-color: #ffffff; /* Light background for service cards */
-  color: #000000; /* Dark text color */
-  border: 1px solid #e0e0e0; /* Add a light border for better visibility */
-}
-
-body.light-mode .service:hover {
-  background-color: #f0f0f0; /* Slightly darker background on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-}
-
-body.light-mode .contact__form {
-  background-color: #ffffff; /* Light background for the contact form */
-  color: #000000; /* Dark text color */
-  border: 1px solid #e0e0e0; /* Add a light border for better visibility */
-}
-
-body.light-mode .form__input {
-  background-color: #f9f9f9; /* Light background for input fields */
-  color: #000000; /* Dark text color */
-  border: 1px solid #e0e0e0; /* Add a light border */
-}
-
-body.light-mode .form__input:focus {
-  border-color: #4a90e2; /* Bright blue focus color */
-}
-
-body.light-mode .button {
-  background-color: #4a90e2; /* Bright blue button */
-  color: #ffffff; /* White text */
-}
-
-body.light-mode .button:hover {
-  background-color: #357ab8; /* Slightly darker blue on hover */
-}
-
-body.light-mode footer a {
-  color: #000000; /* Dark text color for footer links */
-}
-
-body.light-mode footer a:hover {
-  color: #555555; /* Slightly darker hover color for footer links */
-}
-
-body.light-mode #scrollUp {
-  background-color: #000000; /* Dark background for the scroll-up button */
-  color: #ffffff; /* Light text color */
-}
-
-body.light-mode #scrollUp:hover {
-  background-color: #333333; /* Slightly lighter background on hover */
-}
-/* Dark mode styles for the header */
-header {
-  background-color: #1e2a38; /* Dark Blue background */
-}
-
-header nav a {
-  color: #e0e6ed; /* Light Grayish Blue for links */
-  font-size: var(--normal-font-size);
-  transition: color 0.3s ease;
-}
-
-header nav a:hover {
-  color: #a8c0e0; /* Soft Light Blue on hover */
-}
-
-header .theme-toggle {
-  background-color: #e0e6ed; /* Light Grayish Blue for the toggle button */
-  color: #1e2a38; /* Dark Blue text for the toggle button */
-}
-
-header .theme-toggle:hover {
-  background-color: #a8c0e0; /* Soft Light Blue on hover */
-}
-/* Light mode styles for the Skills section */
-body.light-mode .info__skills {
-  background-color: #ffffff; /* Light background for the skills box */
-  color: #000000; /* Dark text color */
-  border: 1px solid #e0e0e0; /* Add a light border for better visibility */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-}
-
-body.light-mode .info__skills h3 {
-  color: #4a90e2; /* Bright blue for the Skills title */
-}
-
-body.light-mode .info__skills li {
-  color: #555555; /* Darker text for the list items */
-}
-
-body.light-mode .info__skills li::before {
-  color: #4a90e2; /* Bright blue checkmark */
-}
-/*=============== BASE ===============*/
+/* Base */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -510,7 +87,7 @@ img {
   height: auto;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
+/* Reusable classes */
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
@@ -530,56 +107,135 @@ img {
   font-size: var(--h1-font-size);
   font-weight: var(--font-bold);
   margin-bottom: 2rem;
+  color: #e0e6ed;
+}
+
+.section__subtitle {
+  font-size: 1rem;
+  color: #a8c0e0;
+  margin-bottom: 2rem;
 }
 
 .main {
   overflow: hidden;
 }
 
-/*=============== HEADER & NAV ===============*/
-/* Center navigation links and align the toggle button to the right */
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInRotate {
+  0% {
+    opacity: 0;
+    transform: rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+@keyframes fadeInScaleRotate {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Header & Navigation */
 header {
-  position: sticky; /* Makes the header stick to the top */
-  top: 0; /* Sticks the header to the top of the viewport */
-  z-index: 1000; /* Ensures the header stays above other elements */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Space between logo, nav, and toggle button */
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  background-color: #1e2a38;
 }
 
-header nav {
-  flex: 1; /* Allow the nav to take up available space */
-  display: flex;
-  justify-content: center; /* Center the navigation links */
-  gap: 2rem; /* Add spacing between links */
-}
-
-header .theme-toggle {
-  margin-left: auto; /* Push the toggle button to the far right */
-}
-header .theme-toggle {
-  background-color: var(--first-color);
-  color: var(--title-color);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-header .theme-toggle:hover {
-  background-color: var(--first-color-alt);
-}
-header .logo {
-  font-size: var(--big-font-size);
-  font-weight: var(--font-bold);
-  color: var(--first-color);
-}
-header .logo {
-  font-size: var(--big-font-size);
-  font-weight: var(--font-bold);
-  color: var(--first-color);
-}
 header .logo {
   font-size: var(--big-font-size);
   font-weight: var(--font-bold);
@@ -587,21 +243,38 @@ header .logo {
 }
 
 header nav {
+  flex: 1;
   display: flex;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 2rem;
 }
 
 header nav a {
-  color: var(--text-color);
+  color: #e0e6ed;
   font-size: var(--normal-font-size);
   transition: color 0.3s ease;
 }
 
 header nav a:hover {
-  color: var(--first-color);
+  color: #a8c0e0;
 }
 
-/*=============== HOME ===============*/
+header .theme-toggle {
+  background-color: #e0e6ed;
+  color: #1e2a38;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+header .theme-toggle:hover {
+  background-color: #a8c0e0;
+}
+
+/* Home Section */
 .home {
   display: flex;
   flex-direction: column;
@@ -613,56 +286,101 @@ header nav a:hover {
   animation: fadeIn 2s ease-in-out;
 }
 
-.home h1 {
+.home__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.home__text {
+  flex: 1;
+}
+
+.home__text h1 {
   font-size: var(--biggest-font-size);
   margin-bottom: 1rem;
   color: var(--first-color);
 }
 
-.home p {
+.home__text p {
   font-size: var(--h2-font-size);
   margin-bottom: 2rem;
+  color: var(--text-color);
 }
 
-.home button {
-  padding: 0.75rem 1.5rem;
-  font-size: var(--normal-font-size);
-  color: var(--title-color);
-  background-color: var(--first-color);
+.resume-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  transition: all 0.3s ease;
 }
 
-.home button:hover {
-  background-color: var(--first-color-alt);
+.resume-button:hover {
+  background-color: #357ab8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Profile Photo */
+.home__photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(square, #1e2a38, #0b1120);
+  border-radius: 50%;
+  padding: 2rem;
+}
+
+.home__photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.home__photo::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 150px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(173, 216, 230, 0.5), transparent);
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse 2s infinite;
+}
+
+.home__photo img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border: 4px solid var(--first-color);
+  box-shadow: 0 0 15px var(--first-color);
+}
+
 /* Separator */
 .separator {
   width: 80%;
   height: 2px;
   background: linear-gradient(to right, #4a90e2, transparent);
-  margin: 2rem auto; /* Center the separator */
+  margin: 2rem auto;
   border: none;
 }
+
 /* Info Section */
 .info {
   padding: 4rem 2rem;
-  background-color: #0b1120; /* Matches the dark theme */
+  background-color: #0b1120;
   text-align: center;
-}
-
-.section__title {
-  font-size: 2rem;
-  color: #e0e6ed; /* Light Grayish Blue */
-  margin-bottom: 1rem;
-}
-
-.section__subtitle {
-  font-size: 1rem;
-  color: #a8c0e0; /* Soft Light Blue */
-  margin-bottom: 2rem;
 }
 
 .info__container {
@@ -675,22 +393,22 @@ header nav a:hover {
 .info__text {
   max-width: 600px;
   font-size: 1rem;
-  color: #e0e6ed; /* Light Grayish Blue */
+  color: #e0e6ed;
   line-height: 1.6;
 }
 
 .info__skills {
-  background-color: #1e2a38; /* Dark Blue background for skills */
+  background-color: #1e2a38;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 400px;
   text-align: left;
 }
 
 .info__skills h3 {
   font-size: 1.5rem;
-  color: #4a90e2; /* Bright Blue */
+  color: #4a90e2;
   margin-bottom: 1rem;
 }
 
@@ -701,7 +419,7 @@ header nav a:hover {
 
 .info__skills li {
   font-size: 1rem;
-  color: #a8c0e0; /* Soft Light Blue */
+  color: #a8c0e0;
   margin-bottom: 0.5rem;
   position: relative;
   padding-left: 1.5rem;
@@ -711,26 +429,15 @@ header nav a:hover {
   content: "✔";
   position: absolute;
   left: 0;
-  color: #4a90e2; /* Bright Blue checkmark */
+  color: #4a90e2;
   font-size: 1rem;
 }
-/*=============== WORKS ===============*/
+
+/* Works Section */
 .work {
   padding: 4rem 2rem;
-  background-color: #0b1120; /* Matches the dark theme */
+  background-color: #0b1120;
   text-align: center;
-}
-
-.section__title {
-  font-size: 2rem;
-  color: #e0e6ed; /* Light Grayish Blue */
-  margin-bottom: 1rem;
-}
-
-.section__subtitle {
-  font-size: 1rem;
-  color: #a8c0e0; /* Soft Light Blue */
-  margin-bottom: 2rem;
 }
 
 .work__container {
@@ -741,7 +448,7 @@ header nav a:hover {
 
 .work__category h3 {
   font-size: 1.5rem;
-  color: #4a90e2; /* Bright Blue */
+  color: #4a90e2;
   margin-bottom: 1rem;
 }
 
@@ -752,73 +459,46 @@ header nav a:hover {
 }
 
 .project {
-  background-color: #1e2a38; /* Dark Blue background for projects */
+  background-color: #1e2a38;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
-  transform: translateY(-10px); /* Lift effect on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .project img {
   width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
 
 .project p {
   font-size: 1rem;
-  color: #e0e6ed; /* Light Grayish Blue */
+  color: #e0e6ed;
   margin-bottom: 0.5rem;
 }
 
 .project__link {
   font-size: 0.9rem;
-  color: #4a90e2; /* Bright Blue */
+  color: #4a90e2;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .project__link:hover {
-  color: #357ab8; /* Slightly darker blue on hover */
+  color: #357ab8;
 }
 
-/* Light mode styles for the Services section */
-body.light-mode .services__container .service {
-  background-color: #ffffff; /* Light background for service cards */
-  color: #000000; /* Dark text color for better visibility */
-  border: 1px solid #e0e0e0; /* Add a light border for better contrast */
-}
-
-body.light-mode .services__container .service__title {
-  color: #4a90e2; /* Bright blue for service titles */
-}
-
-body.light-mode .services__container .service__description {
-  color: #555555; /* Slightly darker gray for descriptions */
-}
-
-body.light-mode .services__container .service__icon {
-  color: #4a90e2; /* Bright blue for icons */
-}
-
-.section__title {
-  font-size: 2rem;
-  color: #e0e6ed; /* Light Grayish Blue */
-  margin-bottom: 1rem;
-}
-
-.section__subtitle {
-  font-size: 1rem;
-  color: #a8c0e0; /* Soft Light Blue */
-  margin-bottom: 2rem;
-}
-
+/* Services Section */
 .services__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -827,52 +507,41 @@ body.light-mode .services__container .service__icon {
 }
 
 .service {
-  background-color: #1e2a38; /* Dark Blue background for each service */
+  background-color: #1e2a38;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service:hover {
-  transform: translateY(-10px); /* Lift effect on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .service__icon {
   font-size: 3rem;
-  color: #4a90e2; /* Bright Blue for icons */
+  color: #4a90e2;
   margin-bottom: 1rem;
 }
 
 .service__title {
   font-size: 1.5rem;
-  color: #e0e6ed; /* Light Grayish Blue */
+  color: #e0e6ed;
   margin-bottom: 1rem;
 }
 
 .service__description {
   font-size: 1rem;
-  color: #a8c0e0; /* Soft Light Blue */
+  color: #a8c0e0;
   line-height: 1.6;
 }
+
 /* Contact Section */
 .contact {
   padding: 4rem 2rem;
-  background-color: #0b1120; /* Matches the dark theme */
+  background-color: #0b1120;
   text-align: center;
-}
-
-.section__title {
-  font-size: 2rem;
-  color: #e0e6ed; /* Light Grayish Blue */
-  margin-bottom: 1rem;
-}
-
-.section__subtitle {
-  font-size: 1rem;
-  color: #a8c0e0; /* Soft Light Blue */
-  margin-bottom: 2rem;
 }
 
 .contact__container {
@@ -885,10 +554,10 @@ body.light-mode .services__container .service__icon {
 .contact__form {
   width: 100%;
   max-width: 500px;
-  background-color: #1e2a38; /* Dark Blue background for the form */
+  background-color: #1e2a38;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .form__group {
@@ -898,22 +567,22 @@ body.light-mode .services__container .service__icon {
 .form__input {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #a8c0e0; /* Soft Light Blue border */
+  border: 1px solid #a8c0e0;
   border-radius: 5px;
   font-size: 1rem;
-  color: #e0e6ed; /* Light Grayish Blue text */
-  background-color: #0b1120; /* Matches the dark theme */
+  color: #e0e6ed;
+  background-color: #0b1120;
 }
 
 .form__input:focus {
   outline: none;
-  border-color: #4a90e2; /* Bright Blue focus color */
+  border-color: #4a90e2;
 }
 
 .button {
   padding: 0.75rem 1.5rem;
-  background-color: #4a90e2; /* Bright Blue button */
-  color: #ffffff; /* White text */
+  background-color: #4a90e2;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -922,7 +591,21 @@ body.light-mode .services__container .service__icon {
 }
 
 .button:hover {
-  background-color: #357ab8; /* Slightly darker blue on hover */
+  background-color: #357ab8;
+}
+
+#form-feedback {
+  font-size: 1rem;
+  color: #4caf50;
+  text-align: center;
+}
+
+#form-feedback.error {
+  color: #f44336;
+}
+
+#form-feedback.loading {
+  color: #2196f3;
 }
 
 .contact__socials {
@@ -930,40 +613,32 @@ body.light-mode .services__container .service__icon {
   gap: 1.5rem;
 }
 
-/* Light mode styles for social media links */
-body.light-mode .contact__socials .social__link {
-  color: #87ceeb; /* Bright blue for the text and icons */
-}
-
-body.light-mode .contact__socials .social__link:hover {
-  color: #87ceeb; /* Slightly darker blue on hover */
-}
 .social__link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #e0e6ed; /* Default color for social links */
+  color: #e0e6ed;
   font-size: 1rem;
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social__link:hover {
-  color: #4a90e2; /* Bright blue on hover */
-  transform: scale(1.1); /* Slightly enlarge the link on hover */
+  color: #4a90e2;
+  transform: scale(1.1);
 }
 
 .social__link i {
   font-size: 1.5rem;
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for icons */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social__link:hover i {
-  color: #4a90e2; /* Bright blue for icons on hover */
-  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+  color: #4a90e2;
+  transform: scale(1.2);
 }
 
-/*=============== FOOTER ===============*/
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
@@ -981,7 +656,7 @@ footer a:hover {
   color: var(--title-color);
 }
 
-/*=============== SCROLL UP ===============*/
+/* Scroll Up Button */
 #scrollUp {
   position: fixed;
   bottom: 20px;
@@ -1000,7 +675,154 @@ footer a:hover {
   background-color: var(--first-color-alt);
 }
 
-/*=============== BREAKPOINTS ===============*/
+/* Light Mode Styles */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-mode .header {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+body.light-mode nav a {
+  color: #000000;
+}
+
+body.light-mode nav a:hover {
+  color: #555555;
+}
+
+body.light-mode .theme-toggle {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.light-mode .home {
+  background-color: #f9f9f9;
+  color: #000000;
+}
+
+body.light-mode .home__text h1,
+body.light-mode .section__title {
+  color: #000000;
+}
+
+body.light-mode .home__text p,
+body.light-mode .section__subtitle,
+body.light-mode .info__text {
+  color: #000000;
+}
+
+body.light-mode .project p {
+  color: #4a90e2;
+  opacity: 1;
+}
+
+body.light-mode .info,
+body.light-mode .services,
+body.light-mode .work,
+body.light-mode .contact {
+  background-color: #f9f9f9;
+  color: #000000;
+}
+
+body.light-mode .project {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+}
+
+body.light-mode .project:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .service {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+}
+
+body.light-mode .service:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .service__title {
+  color: #4a90e2;
+}
+
+body.light-mode .service__description {
+  color: #555555;
+}
+
+body.light-mode .service__icon {
+  color: #4a90e2;
+}
+
+body.light-mode .contact__form {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+}
+
+body.light-mode .form__input {
+  background-color: #f9f9f9;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+}
+
+body.light-mode .form__input:focus {
+  border-color: #4a90e2;
+}
+
+body.light-mode .info__skills {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .info__skills h3 {
+  color: #4a90e2;
+}
+
+body.light-mode .info__skills li {
+  color: #555555;
+}
+
+body.light-mode .info__skills li::before {
+  color: #4a90e2;
+}
+
+body.light-mode .contact__socials .social__link {
+  color: #87ceeb;
+}
+
+body.light-mode .contact__socials .social__link:hover {
+  color: #87ceeb;
+}
+
+body.light-mode footer a {
+  color: #000000;
+}
+
+body.light-mode footer a:hover {
+  color: #555555;
+}
+
+body.light-mode #scrollUp {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.light-mode #scrollUp:hover {
+  background-color: #333333;
+}
+
+/* Breakpoints */
 @media screen and (max-width: 768px) {
   header nav {
     flex-wrap: wrap;
@@ -1017,6 +839,10 @@ footer a:hover {
 
   .work .projects {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .home__photo img {
+    max-width: 70%;
   }
 }
 
@@ -1044,5 +870,9 @@ footer a:hover {
 
   .work .projects {
     grid-template-columns: 1fr;
+  }
+
+  .home__photo img {
+    max-width: 60%;
   }
 }

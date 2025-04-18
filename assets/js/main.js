@@ -60,27 +60,25 @@ window.addEventListener("scroll", () => {
 });
 
 /*=============== EMAIL JS ===============*/
-// Example: Sending email using EmailJS
-const contactForm = document.getElementById("contact-form");
+document.getElementById("send-button").addEventListener("click", () => {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
 
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+  if (name && email && message) {
+    // Construct the mailto link
+    const mailtoLink = `mailto:televisionbrillante@gmail.com?subject=Message from ${name}&body=Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
 
-    // Replace with your EmailJS service and template IDs
-    emailjs
-      .sendForm("service_id", "template_id", "#contact-form", "user_id")
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          contactForm.reset();
-        },
-        (error) => {
-          alert("Failed to send message. Please try again.");
-        }
-      );
-  });
-}
+    // Update the hidden mailto link
+    const mailtoAnchor = document.getElementById("mailto-link");
+    mailtoAnchor.href = mailtoLink;
+
+    // Trigger the mailto link
+    mailtoAnchor.click();
+  } else {
+    alert("Please fill in all fields before sending your message.");
+  }
+});
 
 document.getElementById("send-button").addEventListener("click", async () => {
   const name = document.getElementById("name").value;
@@ -89,17 +87,18 @@ document.getElementById("send-button").addEventListener("click", async () => {
 
   if (name && email && message) {
     try {
-      const response = await fetch("http://localhost:5000/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
+      const response = await emailjs.send(
+        "service_kpr8r1y",
+        "template_xer42oq",
+        {
+          name: name,
+          email: email,
+          message: message,
+        }
+      );
 
-      const result = await response.json();
-      if (response.ok) {
-        alert(result.message);
+      if (response.status === 200) {
+        alert("Message sent successfully!");
       } else {
         alert("Failed to send message. Please try again.");
       }
