@@ -67,7 +67,7 @@ document.getElementById("send-button").addEventListener("click", () => {
 
   if (name && email && message) {
     // Construct the mailto link
-    const mailtoLink = `mailto:televisionbrillante@gmail.com?subject=Message from ${name}&body=Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
+    const mailtoLink = `mailto:brillantejohnloyd@gmail.com?subject=Message from ${name}&body=Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
 
     // Update the hidden mailto link
     const mailtoAnchor = document.getElementById("mailto-link");
