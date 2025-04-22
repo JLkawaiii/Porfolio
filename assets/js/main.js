@@ -16,6 +16,7 @@ if (navClose) {
     navMenu.classList.remove("show-menu");
   });
 }
+
 /*=============== DARK/LIGHT MODE TOGGLE ===============*/
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
@@ -32,13 +33,14 @@ themeToggle.addEventListener("click", () => {
   if (body.classList.contains("light-mode")) {
     body.classList.remove("light-mode");
     localStorage.setItem("theme", "dark-mode");
-    themeToggle.textContent = "🌙";
+    themeToggle.textContent = "☀️";
   } else {
     body.classList.add("light-mode");
     localStorage.setItem("theme", "light-mode");
-    themeToggle.textContent = "☀️";
+    themeToggle.textContent = "🌙";
   }
 });
+
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLinks = document.querySelectorAll(".nav__link");
 
@@ -59,7 +61,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/*=============== EMAIL JS ===============*/
+/*=============== CONTACT FORM ===============*/
 document.getElementById("send-button").addEventListener("click", () => {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -75,43 +77,20 @@ document.getElementById("send-button").addEventListener("click", () => {
 
     // Trigger the mailto link
     mailtoAnchor.click();
+
+    // Success message
+    alert("Message sent successfully!");
+
+    // Clear the form fields
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
   } else {
     alert("Please fill in all fields before sending your message.");
   }
 });
 
-document.getElementById("send-button").addEventListener("click", async () => {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  if (name && email && message) {
-    try {
-      const response = await emailjs.send(
-        "service_kpr8r1y",
-        "template_xer42oq",
-        {
-          name: name,
-          email: email,
-          message: message,
-        }
-      );
-
-      if (response.status === 200) {
-        alert("Message sent successfully!");
-      } else {
-        alert("Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred. Please try again.");
-    }
-  } else {
-    alert("Please fill in all fields.");
-  }
-});
-
-/*=============== SHOW SCROLL UP ===============*/
+/*=============== SCROLL UP BUTTON ===============*/
 const scrollUp = document.getElementById("scrollUp");
 
 window.addEventListener("scroll", () => {
@@ -122,7 +101,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+/*=============== ACTIVE SECTION HIGHLIGHTING ===============*/
 const sections = document.querySelectorAll("section[id]");
 
 window.addEventListener("scroll", () => {
@@ -134,9 +113,13 @@ window.addEventListener("scroll", () => {
     const sectionId = current.getAttribute("id");
     const navLink = document.querySelector(`.nav__link[href*=${sectionId}]`);
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+    if (
+      navLink &&
+      scrollY > sectionTop &&
+      scrollY <= sectionTop + sectionHeight
+    ) {
       navLink.classList.add("active-link");
-    } else {
+    } else if (navLink) {
       navLink.classList.remove("active-link");
     }
   });
@@ -148,7 +131,7 @@ const sr = ScrollReveal({
   distance: "50px",
   duration: 2000,
   delay: 200,
-  reset: true, // Animation repeats on scroll
+  reset: true,
 });
 
 sr.reveal(".home, .work, .info, .services, .contact", { interval: 200 });
