@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/img/Jl.png" type="image/png" />
-    <!--=============== REMIXICONS ===============-->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
     />
 
-    <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <!--=============== JAVASCRIPT ===============-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <script src="assets/js/main.js" defer></script>
 
     <title>Portfolio</title>
@@ -23,11 +23,11 @@
     <header class="header" id="header">
       <div class="logo">Portfolio</div>
       <nav>
-        <a href="#home">Home</a>
-        <a href="#work">My Work</a>
-        <a href="#info">My Info</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact Me</a>
+        <a href="#home" class="nav__link">Home</a>
+        <a href="#work" class="nav__link">My Work</a>
+        <a href="#info" class="nav__link">My Info</a>
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#contact" class="nav__link">Contact Me</a>
       </nav>
       <button type="button" id="theme-toggle" class="theme-toggle">🌙</button>
     </header>
@@ -53,7 +53,7 @@
           </div>
         </div>
       </section>
-      <!-- Separator -->
+
       <div class="separator"></div>
       <!--==================== RECENT WORKS ====================-->
       <section class="work section" id="work">
@@ -160,7 +160,6 @@
         </div>
       </section>
 
-      <!-- Separator -->
       <div class="separator"></div>
       <!--==================== INFO ====================-->
       <section class="info section" id="info">
@@ -201,7 +200,6 @@
         </div>
       </section>
 
-      <!-- Separator -->
       <div class="separator"></div>
       <!--==================== SERVICES ====================-->
       <section class="services section" id="services">
@@ -246,7 +244,6 @@
         </div>
       </section>
 
-      <!-- Separator -->
       <div class="separator"></div>
       <!--==================== CONTACT ====================-->
       <section class="contact section" id="contact">
@@ -256,7 +253,6 @@
         </p>
 
         <div class="contact__container">
-          <!-- Contact Form -->
           <form class="contact__form" id="contact-form">
             <div class="form__group">
               <input
@@ -288,6 +284,7 @@
                 required
               ></textarea>
             </div>
+
             <a href="#" id="mailto-link" style="display: none"></a>
             <button type="button" class="button" id="send-button">
               Send Message
@@ -333,7 +330,6 @@
       </p>
     </footer>
 
-    <!--========== SCROLL UP ==========-->
     <div id="scrollUp">↑</div>
   </body>
 </html>
